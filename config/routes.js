@@ -9,6 +9,8 @@
  */
 
 module.exports.routes = {
+  'get /api/users': 'UsersController.list',
+  'post /api/users': 'UsersController.create'
 
 
 };
