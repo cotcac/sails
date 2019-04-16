@@ -9,8 +9,27 @@
  */
 
 module.exports.routes = {
+
+  // users
   'get /api/users': 'UsersController.list',
-  'post /api/users': 'UsersController.create'
+  'post /api/users': 'UsersController.create',
+
+  // courses
+  'get /api/courses' : 'CoursesController.list',
+  'get /api/courses/:id' : 'CoursesController.single',
+
+  'post /api/courses' : 'CoursesController.create',
+  // chapter
+
+  'get /api/chapters' : 'ChaptersController.list',
+
+  'post /api/chapters' : 'ChaptersController.create',
+
+  // videos
+
+  'get /api/videos' : 'VideosController.list',
+
+  'post /api/videos' : 'VideosController.create',
 
 
 };

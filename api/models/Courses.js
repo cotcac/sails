@@ -1,5 +1,5 @@
 /**
- * Users.js
+ * Courses.js
  *
  * @description :: A model definition represents a database table/collection.
  * @docs        :: https://sailsjs.com/docs/concepts/models-and-orm/models
@@ -10,19 +10,20 @@ module.exports = {
   attributes: {
 
     name: {
-      type: 'string',
+      type:'string',
       required: true,
     },
-    role: {
-      type: 'string',
-      required:true
-    },
-    // reference to courses
-    courses : {
-      collection: 'Courses',
-      via: 'instructor'
-    }
+    // Add a reference to users
 
+    instructor: {
+      model:'Users',
+      required: true
+    },
+    // Add a reference to chapper.
+    chapters: {
+      collection: 'chapters',
+      via:'course_id'
+    }
 
     //  ╔═╗╦═╗╦╔╦╗╦╔╦╗╦╦  ╦╔═╗╔═╗
     //  ╠═╝╠╦╝║║║║║ ║ ║╚╗╔╝║╣ ╚═╗

@@ -8,7 +8,7 @@
 module.exports = {
 
   list : async (req, res) => {
-    await Users.find()
+    await Users.find().populate('courses')
     .then(function(result){
       res.json(result);
     })
